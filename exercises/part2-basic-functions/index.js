@@ -10,12 +10,12 @@ functions later on too ;-).
 /* =====================
 Instructions: Write a function, age, that takes a birth year and returns an age
 in years. (Let's just assume this person was born January 1 at 12:00 AM)
-Example: "age(2000) should return 22"
+Example: "age(2000) should return 26"
 ===================== */
 
 let age = (birthYear) => {};
 
-console.log('age success:', age(1971) === 54);
+console.log('age success:', age(1971) === 55);
 
 /* =====================
 Instructions: Write a function that adds one to the number provided
