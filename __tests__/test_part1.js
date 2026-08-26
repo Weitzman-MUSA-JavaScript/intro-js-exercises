@@ -1,4 +1,5 @@
 /* global describe, beforeAll, it, page, expect */
+import 'expect-puppeteer';
 
 let output;
 beforeAll(async () => {

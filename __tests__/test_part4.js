@@ -1,4 +1,5 @@
 /* global describe, beforeAll, it, page, expect */
+import 'expect-puppeteer';
 
 beforeAll(async () => {
   await page.goto('http://localhost:8080/exercises/part4-functions-as-values/');
@@ -11,7 +12,7 @@ describe('The filter function', () => {
       let callArgs = [];
 
       let originalFunc = Array.prototype.filter;
-      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc.apply(this, args) };
+      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc.apply(this, args); };
 
       try {
         Array.prototype.filter = patchedFunc;
@@ -26,7 +27,7 @@ describe('The filter function', () => {
   });
 
   it('should not change the original array', async () => {
-    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; filter(arr, () => false); return arr });
+    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; filter(arr, () => false); return arr; });
     expect(value).toEqual([1, 2, 3, 4, 5]);
   });
 
@@ -48,7 +49,7 @@ describe('The map function', () => {
       let callArgs = [];
 
       let originalFunc = Array.prototype.map;
-      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc.apply(this, args) };
+      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc.apply(this, args); };
 
       try {
         Array.prototype.map = patchedFunc;
@@ -63,7 +64,7 @@ describe('The map function', () => {
   });
 
   it('should not change the original array', async () => {
-    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; map(arr, (x) => x * 2); return arr });
+    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; map(arr, (x) => x * 2); return arr; });
     expect(value).toEqual([1, 2, 3, 4, 5]);
   });
 
@@ -82,7 +83,7 @@ describe('The reduce function', () => {
       let callArgs = [];
 
       let originalFunc = Array.prototype.reduce;
-      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc.apply(this, args) };
+      let patchedFunc = (...args) => { callArgs.push(args); return originalFunc.apply(this, args); };
 
       try {
         Array.prototype.reduce = patchedFunc;
@@ -97,7 +98,7 @@ describe('The reduce function', () => {
   });
 
   it('should not change the original array', async () => {
-    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; reduce(arr, (x, y) => x / y, 1); return arr });
+    const value = await page.evaluate(() => { let arr = [1, 2, 3, 4, 5]; reduce(arr, (x, y) => x / y, 1); return arr; });
     expect(value).toEqual([1, 2, 3, 4, 5]);
   });
 

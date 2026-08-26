@@ -1,4 +1,5 @@
 /* global describe, beforeAll, it, page, expect */
+import 'expect-puppeteer';
 
 beforeAll(async () => {
   await page.goto('http://localhost:8080/exercises/part2-basic-functions/');
@@ -71,7 +72,6 @@ describe('The isEven function', () => {
     value = await page.evaluate(() => isEven(132));
     expect(value).toEqual(true);
 
-
     value = await page.evaluate(() => isEven(3));
     expect(value).toEqual(false);
     value = await page.evaluate(() => isEven(133));
@@ -88,7 +88,6 @@ describe('The isOdd function', () => {
     expect(value).toEqual(false);
     value = await page.evaluate(() => isOdd(132));
     expect(value).toEqual(false);
-
 
     value = await page.evaluate(() => isOdd(3));
     expect(value).toEqual(true);

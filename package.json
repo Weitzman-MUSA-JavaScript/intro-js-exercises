@@ -1,20 +1,26 @@
 {
-  "name": "week4",
+  "name": "intro-js-exercises",
   "version": "1.0.0",
-  "description": "MUSA 611 Week 4 Files",
-  "main": "index.js",
+  "description": "MUSA 6110 Intro JS Exercises",
+  "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --color"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.48.0",
-    "eslint-config-google": "^0.14.0",
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^10.9.1",
+    "globals": "^17.11.0",
     "http-server": "^14.1.1",
-    "jest": "^30.1.3",
+    "jest": "^30.4.2",
     "jest-puppeteer": "^11.0.0",
     "stylelint": "^15.10.3",
     "stylelint-config-standard": "^34.0.0"
+  },
+  "dependencies": {
+    "jest-environment-jsdom": "^30.4.1",
+    "upgrade": "^1.1.0"
   }
 }
